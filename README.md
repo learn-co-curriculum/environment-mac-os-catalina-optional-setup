@@ -104,7 +104,7 @@ should see the following:
 
   You should see your prompt change to display the current dirrectory, followed by `// ♥ >`.
 
-  > **Note:** An alternative, minimal prompt (just `// ♥ >`)is also provided. If you
+  > **Note:** An alternative, minimal prompt (just `// ♥ >`) is also provided. If you
   > would like to use this second prompt, comment out the lines that start with
   > `PS1`, `PS2`, and `PS4`. Just below these are the alternative assignments.
   > Uncomment these and rerun `source ~/.zprofile` to see the change.
@@ -129,7 +129,7 @@ You’ll be using a couple of different databases as you move through the web
 development track. The default database that Rails uses is SQLite. We also
 frequently see that students want to deploy their apps to the free hosting
 service [Heroku][]. To do this though, you’ll need to be using Postgres instead.
-Install the Postgress app at [http://postgresapp.com/.
+Install the Postgress app at http://postgresapp.com/.
 
 ### Protecting Your Eyes
 
@@ -202,6 +202,7 @@ efficient and less frustrating. Below are some tools that help manage
 application windows:
 
 [Spectacle](http://spectacleapp.com/) - Free and open source.
+
 [Breeze](http://www.autumnapps.com/breeze/) - Demo available for download; full application available for purchase.
 
 ### Programming Fonts
@@ -215,5 +216,4 @@ ones you may want to consider installing:
 - [Dan Benjamin on Anonymous Pro](http://hivelogic.com/articles/anonymous-pro-programming-monospace-font)
 - [Jeff Atwood on Programming Fonts](http://www.codinghorror.com/blog/2007/10/revisiting-programming-fonts.html)
 - [Managing Fonts in OS X](http://support.apple.com/kb/ht2435)
-
-[Heroku](https://www.heroku.com/)
+- [Heroku](https://www.heroku.com/)
