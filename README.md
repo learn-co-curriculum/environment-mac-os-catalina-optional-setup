@@ -139,7 +139,7 @@ brew services start postgresql
 gem install pg
 ```
 
-Once everything is installed, you may also want to install [Postico][Postico], which will
+Once everything is installed, you may also want to install [Postico](https://eggerapps.at/postico/), which will
 provide a more user friendly interface for looking at PostgreSQL databases created 
 locally.
 
@@ -229,4 +229,4 @@ ones you may want to consider installing:
 - [Managing Fonts in OS X](http://support.apple.com/kb/ht2435)
 
 [Heroku](https://www.heroku.com/)
-[Postico](https://eggerapps.at/postico/)
+
