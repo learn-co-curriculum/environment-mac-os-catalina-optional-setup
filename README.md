@@ -125,11 +125,21 @@ helpful as you learn SQL.
 
 ### Install Postgres
 
-You’ll be using a couple of different databases as you move through the web
-development track. The default database that Rails uses is SQLite. We also
-frequently see that students want to deploy their apps to the free hosting
-service [Heroku][]. To do this though, you’ll need to be using Postgres instead.
-Install the Postgress app at [http://postgresapp.com/.
+The default database that Rails uses is SQLite but you may find you need other
+database management systems as you build out and deploy projects. One common
+relational database management system is PostgreSQL. PostgreSQL is necessary in
+certain situations (such as deploying to Rails applications to the free hosting
+service [Heroku][]).
+
+To install Postgres, run the following three commands:
+
+```bash
+brew install postgres
+brew services start postgresql
+gem install pg
+```
+
+Alternatively, you can install the Postgress app at [http://postgresapp.com/.
 
 ### Protecting Your Eyes
 
