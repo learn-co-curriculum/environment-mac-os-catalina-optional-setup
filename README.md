@@ -139,6 +139,10 @@ brew services start postgresql
 gem install pg
 ```
 
+Once everything is installed, you may also want to install [Postico][], which will
+provide a more user friendly interface for looking at PostgreSQL databases created 
+locally.
+
 ### Protecting Your Eyes
 
 Programming involves a lot of staring at a computer screen for many hours at a
@@ -225,3 +229,4 @@ ones you may want to consider installing:
 - [Managing Fonts in OS X](http://support.apple.com/kb/ht2435)
 
 [Heroku](https://www.heroku.com/)
+[Postico](https://eggerapps.at/postico/)
