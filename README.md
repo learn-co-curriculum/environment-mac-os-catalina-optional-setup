@@ -139,7 +139,7 @@ brew services start postgresql
 gem install pg
 ```
 
-Alternatively, you can install the Postgress app at [http://postgresapp.com/.
+Alternatively, you can install the Postgress app at http://postgresapp.com/.
 
 ### Protecting Your Eyes
 
