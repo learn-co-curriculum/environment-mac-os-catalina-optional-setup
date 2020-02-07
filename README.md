@@ -139,7 +139,7 @@ brew services start postgresql
 gem install pg
 ```
 
-Once everything is installed, you may also want to install [Postico][], which will
+Once everything is installed, you may also want to install [Postico][Postico], which will
 provide a more user friendly interface for looking at PostgreSQL databases created 
 locally.
 
