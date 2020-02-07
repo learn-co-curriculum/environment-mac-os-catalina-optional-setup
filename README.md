@@ -139,8 +139,6 @@ brew services start postgresql
 gem install pg
 ```
 
-Alternatively, you can install the Postgress app at http://postgresapp.com/.
-
 ### Protecting Your Eyes
 
 Programming involves a lot of staring at a computer screen for many hours at a
