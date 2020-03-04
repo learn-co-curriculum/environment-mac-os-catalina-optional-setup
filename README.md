@@ -123,25 +123,19 @@ Install the DB Browser for SQLite at https://sqlitebrowser.org/
 This tool helps you visualize and interact with database tables, which will be
 helpful as you learn SQL.
 
-### Install Postgres
+### Install Postico for PostgreSQL
 
-The default database that Rails uses is SQLite but you may find you need other
-database management systems as you build out and deploy projects. One common
-relational database management system is PostgreSQL. PostgreSQL is necessary in
-certain situations (such as deploying to Rails applications to the free hosting
-service [Heroku][]).
+[Postico](https://eggerapps.at/postico/) is a user friendly interface for 
+looking at PostgreSQL databases created locally.
 
-To install Postgres, run the following three commands:
+If you haven't installed PostgreSQL, run the following three commands before 
+downloading Postico:
 
 ```bash
 brew install postgres
 brew services start postgresql
 gem install pg
 ```
-
-Once everything is installed, you may also want to install [Postico](https://eggerapps.at/postico/), which will
-provide a more user friendly interface for looking at PostgreSQL databases created 
-locally.
 
 ### Protecting Your Eyes
 
