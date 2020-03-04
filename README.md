@@ -10,104 +10,49 @@ what you would like to use and install.
 
 When writing a command in the terminal, everything to the left of your command
 is referred to as your terminal's _prompt_. At the moment, your prompt may include
-something like your username for the computer. You can customize this to include many
-helpful things such as the current time and the directory you are in.
+something like your username for the computer. If you followed the automatic install 
+guide, your prompt will likely look something like 
 
-In the previous setup instructions, the `~/.zprofile` dotfile was updated to
-include some helpful shortcuts. Included in that file is a way to change your prompt,
-but it is currently commented out.
+`~ // ♥ >` 
 
-Open `~/.zprofile` in your text editor. Near the beginning of the file, you
-should see the following:
+The default setup from Learn displays the directory you are in, but you can customize
+this prompt to include many helpful things such as the current time. 
+
+When the automatic install script runs, it updates your `~/.zshrc` file to set this
+prompt. If you open `~/.zshrc` in your text editor, you should see the following:
 
 ```sh
-  # ## This function builds your prompt. It is called below
-  # function prompt {
-  #   ## Define the prompt character
-  #   local   CHAR="♥"
-  
-  #   ## Define some local colors
-  #   local   RED="\[\e[0;31m\]"
-  #   local   BLUE="\[\e[0;34m\]"
-  #   local   GREEN="\[\e[0;32m\]"
-  #   local   GRAY_TEXT_BLUE_BACKGROUND="\[\e[37;44;1m\]"
-  
-  #   ## Define a variable to reset the text color
-  #   local   RESET="\[\e[0m\]"
-  
-  #   ## ♥ ☆ - Keeping some cool ASCII Characters for reference
+# Do not modify these three lines - this code loads Node Version Manager 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-  #   autoload -U colors && colors
 
-  #   ## Here is where we actually export the PS1 Variable which stores the text for your prompt
-  #   PS1="%{$fg[cyan]%}%(4~|%-1~/.../%2~|%~) %{$reset_color%}%{$fg[blue]%}// %{$reset_color%}% %{$fg[red]%}♥ > %{$reset_color%}% "
-  #   PS2='> '
-  #   PS4='+ '
+# The following function sets the terminal prompt
+# Modify PS1 to customize it further
 
-  #   ## Additional Option: Minimal // ♥ > Prompt
-  #   # PS1="%{$fg[blue]%}// %{$reset_color%}% %{$fg[red]%}♥ > %{$reset_color%}%  "
-  #   #   PS2='> '
-  #   #   PS4='+ '
-
-  # }
-
-  # ## Finally call the function and our prompt is all pretty
-  # prompt
-  ```
-
-  Remove **just the first #** from each line to uncomment this section (in VS Code,
-  you can do this by highlighting the entire section and pressing ⌘/ (command
-  and forward slash). This will comment or uncomment whatever is highlighted.
-
-  The result should look like this:
-
-  ```sh
-  ## This function builds your prompt. It is called below
-  function prompt {
-    ## Define the prompt character
-    local   CHAR="♥"
-  
-    ## Define some local colors
-    local   RED="\[\e[0;31m\]"
-    local   BLUE="\[\e[0;34m\]"
-    local   GREEN="\[\e[0;32m\]"
-    local   GRAY_TEXT_BLUE_BACKGROUND="\[\e[37;44;1m\]"
-  
-    ## Define a variable to reset the text color
-    local   RESET="\[\e[0m\]"
-  
-    ## ♥ ☆ - Keeping some cool ASCII Characters for reference
-
+function prompt {
+    local CHAR="♥" ## ♥ ☆ ♬ ○ ♩ ● ♪ - Keeping some cool ASCII Characters for reference
     autoload -U colors && colors
-
+    
     ## Here is where we actually export the PS1 Variable which stores the text for your prompt
-    PS1="%{$fg[cyan]%}%(4~|%-1~/.../%2~|%~) %{$reset_color%}%{$fg[blue]%}// %{$reset_color%}% %{$fg[red]%}♥ > %{$reset_color%}% "
+    PS1="%{$fg[green]%}%(4~|%-1~/.../%2~|%~) %{$reset_color%}%{$fg[blue]%}// %{$reset_color%}% %{$fg[red]%}%{$CHAR%} > %{$reset_color%}% "
     PS2='> '
     PS4='+ '
+}
 
-    ## Additional Option: Minimal // ♥ > Prompt
-    # PS1="%{$fg[blue]%}// %{$reset_color%}% %{$fg[red]%}♥ > %{$reset_color%}%  "
-    #   PS2='> '
-    #   PS4='+ '
+prompt
 
-  }
 
-  ## Finally call the function and our prompt is all pretty
-  prompt
-  ```
+# Do not modify the line below
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+```
 
-  Save `~/.zprofile` and in your terminal, run the following command:
+Modifying the line starting with `PS1` will alter your prompt. If you make a change,
+run `source ~/.zshrc` to see it in the current terminal.
 
-  ```sh
-  source ~/.zprofile
-  ```
-
-  You should see your prompt change to display the current dirrectory, followed by `// ♥ >`.
-
-  > **Note:** An alternative, minimal prompt (just `// ♥ >`)is also provided. If you
-  > would like to use this second prompt, comment out the lines that start with
-  > `PS1`, `PS2`, and `PS4`. Just below these are the alternative assignments.
-  > Uncomment these and rerun `source ~/.zprofile` to see the change.
+**Note:** If you mess up, either replace the code in `~/.zshrc` with the code snippet above. You can also delete the entire `prompt` function and subsequent `prompt` call (make sure to leave the settings for NVM and RVM). This will return your prompt to the default.
 
 ### Key Repeat
 
