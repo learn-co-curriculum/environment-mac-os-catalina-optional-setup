@@ -10,16 +10,43 @@ what you would like to use and install.
 
 When writing a command in the terminal, everything to the left of your command
 is referred to as your terminal's _prompt_. At the moment, your prompt may include
-something like your username for the computer. If you followed the automatic install 
-guide, your prompt will likely look something like 
+something like your username for the computer. 
 
-`~ // ♥ >` 
+You can also customize your prompt to display whatever you'd like by configuring it
+in `~/.zshrc`. Open `~/.zshrc` in your text editor. You should see something similar to
+the following after following the macOS environment instructions:
 
-The default setup from Learn displays the directory you are in, but you can customize
-this prompt to include many helpful things such as the current time. 
+```sh
+# Do not modify these three lines - this code loads Node Version Manager 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-When the automatic install script runs, it updates your `~/.zshrc` file to set this
-prompt. If you open `~/.zshrc` in your text editor, you should see the following:
+# Do not modify the line below
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+```
+
+These lines were added during your environment setup. The first set ensure that NVM is loaded and
+available in the terminal. The last lines ensure RVM looks in the correct places for versions of Ruby.
+To add a customized prompt, we want to add a bit of code into this file:
+
+```sh
+function prompt {
+    local CHAR="♥" ## ♥ ☆ ♬ ○ ♩ ● ♪ - Keeping some cool ASCII Characters for reference
+    autoload -U colors && colors
+    
+    ## Here is where we actually export the PS1 Variable which stores the text for your prompt
+    PS1="%{$fg[green]%}%(4~|%-1~/.../%2~|%~) %{$reset_color%}%{$fg[blue]%}// %{$reset_color%}% %{$fg[red]%}%{$CHAR%} > %{$reset_color%}% "
+    PS2='> '
+    PS4='+ '
+}
+
+prompt
+```
+
+This code defines a Zsh function that sets the prompt. Add this in between the NVM and RVM setup
+lines. The `~/.zshrc` file should now look like this:
 
 ```sh
 # Do not modify these three lines - this code loads Node Version Manager 
@@ -49,8 +76,17 @@ prompt
 export PATH="$PATH:$HOME/.rvm/bin"
 ```
 
-Modifying the line starting with `PS1` will alter your prompt. If you make a change,
-run `source ~/.zshrc` to see it in the current terminal.
+Once this file is saved, in your terminal, run `source ~/.zshrc`. You should see your prompt
+change to look like this:
+
+```sh
+~ // ♥ >
+```
+
+This configuration displays the directory you are in, but you can customize
+this prompt to include many other helpful things such as the current time. To
+change the prompt further, in `~/.zshrc`, modify the line starting with `PS1`. If you make
+a change, run `source ~/.zshrc` to see it in the current terminal.
 
 **Note:** If you mess up, either replace the code in `~/.zshrc` with the code snippet above. You can also delete the entire `prompt` function and subsequent `prompt` call (make sure to leave the settings for NVM and RVM). This will return your prompt to the default.
 
